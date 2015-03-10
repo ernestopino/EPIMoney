@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.source           = {
     :git => "https://github.com/ernestopino/EPIMoney.git",
-    :tag => s.version.to_s
+    :tag => "0.0.1"
   }
 
   s.social_media_url = 'https://twitter.com/ernestopino'
