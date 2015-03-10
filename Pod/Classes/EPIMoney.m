@@ -60,29 +60,29 @@
 
 + (NSString *)zeroAmountWithCurrencyCode
 {
-    // TODO: Pendiente de revisar lo que devuelve [SMPMoney zeroAmount]
+    // TODO: Pendiente de revisar lo que devuelve [EPIMoney zeroAmount]
     
     // Get zero amount
-    NSNumber *zeroAmount = [SMPMoney zeroAmount];
+    NSNumber *zeroAmount = [EPIMoney zeroAmount];
     
     // Create number formatter for extract only the value
-    NSNumberFormatter *numberFormatter = [SMPMoney numberFormatter];
+    NSNumberFormatter *numberFormatter = [EPIMoney numberFormatter];
     
     // Get amount string
     NSString *zeroAmountString = [numberFormatter stringFromNumber:zeroAmount];
     
     // Return string concatenated with currency code
-    NSString *zeroAmountWithCodeString = [NSString stringWithFormat:@"%@%@%@", zeroAmountString, kBetweenSeparator, [[SMPMoney currencyFormatter] currencyCode]];
+    NSString *zeroAmountWithCodeString = [NSString stringWithFormat:@"%@%@%@", zeroAmountString, kBetweenSeparator, [[EPIMoney currencyFormatter] currencyCode]];
     return zeroAmountWithCodeString;
 }
 
 + (NSString *)zeroAmountWithCurrencySymbol
 {
     // Get zero amount
-    NSNumber *zeroAmount = [SMPMoney zeroAmount];
+    NSNumber *zeroAmount = [EPIMoney zeroAmount];
     
     // Return value with symbol
-    return [[SMPMoney currencyFormatter] stringFromNumber:zeroAmount];
+    return [[EPIMoney currencyFormatter] stringFromNumber:zeroAmount];
 }
 
 #pragma mark - Public methods
@@ -93,7 +93,7 @@
     if (self)
     {
         // Initialize formatter
-        _numberFormatter = [SMPMoney currencyFormatter];
+        _numberFormatter = [EPIMoney currencyFormatter];
         
         // Default locale
         _currencyLocale = [NSLocale currentLocale];
@@ -146,13 +146,13 @@
     NSNumber *amount = [NSNumber numberWithDouble:[self.amount doubleValue]];
     
     // Create number formatter for extract only the value
-    NSNumberFormatter *numberFormatter = [SMPMoney numberFormatter];
+    NSNumberFormatter *numberFormatter = [EPIMoney numberFormatter];
     
     // Get amount string
     NSString *amountString = [numberFormatter stringFromNumber:amount];
     
     // Return string concatenated with currency code
-    return [NSString stringWithFormat:@"%@%@%@", amountString, self.betweenSeparator ? self.betweenSeparator : kBetweenSeparator, [[SMPMoney currencyFormatter] currencyCode]];
+    return [NSString stringWithFormat:@"%@%@%@", amountString, self.betweenSeparator ? self.betweenSeparator : kBetweenSeparator, [[EPIMoney currencyFormatter] currencyCode]];
 }
 
 
@@ -166,13 +166,13 @@
     NSNumber *amount = [NSNumber numberWithDouble:[self.amount doubleValue]];
     
     // Create number formatter for extract only the value
-    NSNumberFormatter *numberFormatter = [SMPMoney numberFormatter];
+    NSNumberFormatter *numberFormatter = [EPIMoney numberFormatter];
     
     // Get amount string
     NSString *amountString = [numberFormatter stringFromNumber:amount];
     
     // Return string concatenated with currency code
-    return [NSString stringWithFormat:@"%@%@%@", amountString, self.betweenSeparator ? self.betweenSeparator : kBetweenSeparator, [[SMPMoney currencyFormatter] currencySymbol]];
+    return [NSString stringWithFormat:@"%@%@%@", amountString, self.betweenSeparator ? self.betweenSeparator : kBetweenSeparator, [[EPIMoney currencyFormatter] currencySymbol]];
 }
 
 
