@@ -157,6 +157,7 @@ xcuserdata
 #
 #
 *.xcworkspace/xcshareddata/*
+**/*.xcworkspace/xcshareddata/*
  
 ####
 # Xcode 4 - Deprecated classes
